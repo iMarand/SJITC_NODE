@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Testing Html File</title>
+</head>
+
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <input type="text" id="usernames" placeholder="User names" value="Kenese Deo">
+    <input type="text" id="email" placeholder="User Email" value="deo@gmail.com">
+    <input type="password" id="password">
+    <input type="text" id="spId" placeholder="Id for update only">
+
+    <button onclick="createUser()">Create New User</button>
+    <button onclick="updateUser()">Update User</button>
+    <!-- <button onclick="getUsers()">Retrieve All Users</button> -->
+
+    <script>
+        const createUser = async function () {
+            const u = {};
+
+            u.email = document.getElementById("email");
+            u.user = document.getElementById("usernames");
+            u.passcode = document.getElementById("password");
+
+            try {
+                let user = {
+                    username: u.user.value,
+                    email: u.email.value,
+                    password: u.passcode.value
+                }
+
+                const response = await fetch("http://localhost:2004/newUser", {
+                    method: "POST",
+                    body: JSON.stringify(user),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) console.log(await response);
+                const result = await response.json();
+
+                console.log(result);
+
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        const updateUser = async function () {
+            const u = {};
+
+            u.email = document.getElementById("email");
+            u.user = document.getElementById("usernames");
+            u.passcode = document.getElementById("password");
+            u.id = document.getElementById("spId").value;
+
+            try {
+                let user = {
+                    username: u.user.value,
+                    email: u.email.value,
+                    password: u.passcode.value,
+                };
+
+                const response = await fetch(`http://localhost:2004/user/${u.id}`, {
+                    method: "PUT",
+                    body: JSON.stringify(user),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            } catch (err) {
+                console.error(err);
+            }
+        }
+    </script>
+</body>
+
+</html>

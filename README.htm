@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>README </title>
+</head>
+<body>
+    <ol>
+        <li><h3 id="start-project-by-npm-run-dev-">START PROJECT BY: &quot; npm run dev &quot;</h3>
+        </li>
+        <li><h3 id="create-database-using-database-sql-in-project-with-mentioned-table">CREATE DATABASE USING &quot;DATABASE.SQL&quot; IN PROJECT WITH MENTIONED TABLE</h3>
+        </li>
+        <li><h3 id="use-postman-to-test-this-endpoints-">USE POSTMAN TO TEST THIS ENDPOINTS:</h3>
+        <ul>
+        <li><p><strong>GET GROUP MEMBERS AT (GET METHOD) &quot;<a href="http://localhost:2004/members">http://localhost:2004/members</a>&quot;</strong></p>
+        </li>
+        <li><p><strong>GET ALL USERS IN DATABASE (GET METHOD) &quot;<a href="http://localhost:2004/allUsers">http://localhost:2004/allUsers</a>&quot;</strong></p>
+        </li>
+        <li><p><strong>GET SPECIFIED USER WITH USER ID (GET METHOD) &quot;<a href="http://localhost:2004/user/">http://localhost:2004/user/</a><id>&quot; eg &quot;<a href="http://localhost:2004/user/1">http://localhost:2004/user/1</a>&quot;</strong></p>
+        </li>
+        <li><p><strong>POST USER (Create User) USING (POST METHOD) &quot;<a href="http://localhost:2004/newUser">http://localhost:2004/newUser</a>&quot; WITH &#39;BODY&#39; JSON (USE BODY -&gt; RAW AS JSON )</strong> EG: </p>
+        <pre><code>{ 
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"unix@gmail.com"</span>, 
+          <span class="hljs-attr">"username"</span>: <span class="hljs-string">"Barometer kikis"</span>,
+          <span class="hljs-attr">"password"</span>: <span class="hljs-string">"DooomsDay"</span> 
+        }
+        </code></pre></li>
+        <li><p><strong>UPDATE EXISTING USER BY (PUT METHOD) &quot;<a href="http://localhost:2004/user/2?email=marand@gmail.com&amp;password=1234&amp;username=maxwell">http://localhost:2004/user/2?email=marand@gmail.com&amp;password=1234&amp;username=maxwell</a> USING SEARCH PARAMS</strong></p>
+        </li>
+        <li><p><strong>DELETE EXISTING USER (DELETE METHOD) &quot;<a href="http://localhost:2004/user/1">http://localhost:2004/user/1</a>&quot; </strong></p>
+        </li>
+        </ul>
+        </li>
+        </ol>
+        
+</body>
+</html>
