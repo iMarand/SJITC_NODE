@@ -45,7 +45,9 @@ export class ACTS {
         let user;
 
         entries.map(async (k, i) => {
-            const iQUERY = `UPDATE ${tableName} SET ${k[0]} = "${k[1]}" WHERE id = ${id}`;
+            let eE = (k[0] == "email") ? EncryptData(k[1]) : eE = k[1];
+
+            const iQUERY = `UPDATE ${tableName} SET ${k[0]} = "${eE}" WHERE id = ${id}`;
             user = await _pool.query(iQUERY);
         });
 
